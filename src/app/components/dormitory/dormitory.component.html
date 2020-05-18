@@ -1,0 +1,50 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search by Id" [(ngModel)]="dId" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="dIdSearch()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>peopleNum</th>
+                <th>accommodationCharge</th>
+                <th>telephone</th>
+                <th>flatId</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dormitory of dormitories; let i = index">
+                <td class="id">{{ dormitory.dId }}</td>
+                <td>{{ dormitory.peopleNum }}</td>
+                <td>{{ dormitory.accommodationCharge }}</td>
+                <td>{{ dormitory.telephone }}</td>
+                <td>{{ dormitory.flatId }}</td>
+                <td>
+
+                    <div class="center">
+                        <a [routerLink]="['../dormitory_edit',dormitory.dId]" class="btn btn-info edits">Edit</a>
+                        <a [routerLink]="['../dormitory_delete',dormitory.dId]" class="btn btn-warning deletes">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <br>
+
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAlldormitories()">
+            Remove All
+        </button> -->
+
+</div>
+<div class="center">
+    <a href="/dormitory_add" class="btn btn-primary add">Add New Record</a>
+</div>

@@ -1,0 +1,48 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search by Id" [(ngModel)]="fId" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="fIdSearch()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Layers</th>
+                <th>RoomNum</th>
+                <th>OpenTime</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flat of flats; let i = index">
+                <td class="id">{{ flat.fId }}</td>
+                <td>{{ flat.layers }}</td>
+                <td>{{ flat.roomNum }}</td>
+                <td>{{ flat.openTime }}</td>
+                <td>
+
+                    <div class="center">
+                        <a [routerLink]="['../flat_edit',flat.fId]" class="btn btn-info edits">Edit</a>
+                    <a [routerLink]="['../flat_delete',flat.fId]" class="btn btn-warning deletes">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        <!-- <br>
+
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFlats()">
+            Remove All
+        </button> -->
+    
+</div>
+<div class="center">
+    <a href="/flat_add" class="btn btn-primary add">Add New Record</a>
+</div>

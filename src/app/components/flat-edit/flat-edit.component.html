@@ -1,0 +1,26 @@
+<div class="submit-form">
+    <div>
+        <div class="form-group">
+            <label for="fId">Id</label>
+            <input type="text" class="form-control" id="fId" required [(ngModel)]="flat.fId" name="fId" />
+        </div>
+
+        <div class="form-group">
+            <label for="layers">Layers</label>
+            <input type="number" class="form-control" id="layers" required [(ngModel)]="flat.layers" name="layers" />
+        </div>
+
+        <div class="form-group">
+            <label for="roomNum">roomNum</label>
+            <input type="number" class="form-control" id="roomNum" required [(ngModel)]="flat.roomNum" name="roomNum" />
+        </div>
+
+        <div class="form-group">
+            <label for="openTime">OpenTime</label>
+            <input class="form-control" id="openTime" type="time" required [(ngModel)]="flat.openTime"
+                name="openTime" />
+        </div>
+
+        <button (click)="editFlat()" class="btn btn-success">Submit</button>
+    </div>
+</div>
